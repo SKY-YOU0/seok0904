@@ -1,0 +1,23 @@
+# wrangler.toml
+name = "seok0904"
+main = "worker/src/index.ts"
+compatibility_date = "2025-03-27"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = "public"
+
+[observability]
+enabled = true
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[kv_namespaces]]
+binding = "GEMINI_KEYS_KV"
+id = "d610ee259cc64961be660eea1b0a1cc0"
+
+[[kv_namespaces]]
+binding = "WORKER_CONFIG_KV"
+id = "835c79de48a9422aadc170e5cebf4588"
